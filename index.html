@@ -2,97 +2,106 @@
 	.container {
 		display: grid;
 		grid-template-columns: repeat(6, 1fr);
-		grid-template-rows: repeat(4, 1fr);
 	}
 </style>
+<h2>Jordan & Casey's 10yr Wedding Anniversary Cruise Baby-sitting Signup Site</h2>
 <div class="container">
-	<div>
-	<strong>Nov. 30th</strong>
-	Morning
-	<label>Name</label>
-	<input />
-	Afternoone
-	<label>Name</label>
-	<input />
-	Evening
-	<label>Name</label>
-	<input />
-	Night
-	<label>Name</label>
-	<input />
+	<div class="day">
+		<strong>Nov. 30th</strong><br />
+		Morning
+		<input id="foo" placeholder="name" />
+		<input placeholder="number" />
+		<button onClick="foobar()">click</button>
+		Afternoone
+		<input placeholder="name" />
+		<input placeholder="number" />
+		Evening
+		<input placeholder="name" />
+		<input placeholder="number" />
+		Night
+		<input placeholder="name" />
+		<input placeholder="number" />
 	</div>
 	
-	<div>
-	<strong>Nov. 31th</strong>
-	Morning
-	<label>Name</label>
-	<input />
-	Afternoone
-	<label>Name</label>
-	<input />
-	Evening
-	<label>Name</label>
-	<input />
-	Night
-	<label>Name</label>
-	<input />
+	<div class="day">
+		<strong>Dec. 1st</strong><br />
+		Morning
+		<input placeholder="name" />
+		<input placeholder="number" />
+		Afternoone
+		<input placeholder="name" />
+		<input placeholder="number" />
+		Evening
+		<input placeholder="name" />
+		<input placeholder="number" />
+		Night
+		<input placeholder="name" />
+		<input placeholder="number" />
 	</div>
 
-	</div>
-		<strong>Dec. 1st</strong>
+	<div class="day">
+		<strong>Dec. 2nd</strong><br />
 		Morning
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 		Afternoone
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 		Evening
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 		Night
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 	</div>
 	
-	<div>
-		<strong>Dec. 2st</strong>
+	<div class="day">
+		<strong>Dec. 3rd</strong><br />
 		Morning
-		<label>Name</label>
-		<input />
-		Afternoone
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
+		Afternoon
+		<input placeholder="name" />
+		<input placeholder="number" />
 		Evening
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 		Night
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 	</div>
 	
-	<div>
-		<strong>Dec. 3st</strong>
+	<div class="day">
+		<strong>Dec. 4th</strong><br />
 		Morning
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 		Afternoone
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 		Evening
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 		Night
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 	</div>
 	
-	<div>
-		<strong>Dec. 3st</strong>
+	<div class="day">
+		<strong>Dec. 5th</strong><br />
 		Morning
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 		Afternoone
-		<label>Name</label>
-		<input />
+		<input placeholder="name" />
+		<input placeholder="number" />
 	</div>
 </div>
+
+<script>
+
+function foobar() {
+	const v = document.querySelector('#foo').value
+	console.log('clicked', v)
+}
+</script>
