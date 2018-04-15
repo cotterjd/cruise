@@ -1,7 +1,7 @@
 <style>
 	.container {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 		grid-gap: 10px;
 	}
 	.day {
@@ -10,6 +10,14 @@
 	}
 	.item {
 		display: grid;	
+	}
+
+	@media only screen and (max-width: 991px) {
+		.container {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-gap: 10px;
+		}
 	}
 </style>
 
@@ -51,7 +59,7 @@ function addHTML(day) {
 	document.querySelector('.container').appendChild(div)
 }
 
-const arr = [ "Nov. 30", "Dec. 1st", "Dec. 2nd", "Dec. 3rd", "Dec. 45h" ]
+const arr = [ "Nov. 30", "Dec. 1st", "Dec. 2nd", "Dec. 3rd", "Dec. 4th", "Dec. 5th" ]
 arr.forEach(x => {
 		addHTML(x)
 });
