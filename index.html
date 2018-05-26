@@ -24,7 +24,10 @@
 		text-align: center;
 	}
 
-	@media only screen and (max-width: 500px) {
+	@media all screen and (max-width: 500px) {
+		body {
+			background: yellow;
+		}
 		.container {
 			display: grid;
 			grid-template-columns: 1fr;
@@ -32,12 +35,16 @@
 		}
 	}
 </style>
-
+<head>
+	<meta name="viewpoint" content="width=device-width, initial-scale=1">	
+</head>
 
 <h2>Jordan & Casey's 10yr Wedding Anniversary Cruise Baby-sitting Signup</h2>
+<button id="btn-login">Login</button>
 <h3 class="count-down"></h3>
 <div class="container"></div>
 
+<script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
 <script>
 
 const countDown = document.createElement('div')
@@ -89,5 +96,25 @@ arr.forEach(x => {
 		addHTML(x)
 });
 
+// app.js
 
+window.addEventListener('load', function() {
+
+  var webAuth = new auth0.WebAuth({
+    domain: 'parent-vacation.auth0.com',
+    clientID: 'P2wT0BrYqrjQsMxh2Thyn5A1nSX96drd',
+    responseType: 'token id_token',
+    audience: 'https://parent-vacation.auth0.com/userinfo',
+    scope: 'openid',
+    redirectUri: window.location.href
+ });
+
+ var loginBtn = document.getElementById('btn-login');
+
+ loginBtn.addEventListener('click', function(e) {
+   e.preventDefault();
+   webAuth.authorize();
+ });
+
+});
 </script>
