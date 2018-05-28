@@ -97,10 +97,6 @@ function addHTML(day) {
 	document.querySelector('.container').appendChild(div)
 }
 
-const arr = [ "Nov. 30", "Dec. 1st", "Dec. 2nd", "Dec. 3rd", "Dec. 4th", "Dec. 5th" ]
-arr.forEach(x => {
-		addHTML(x)
-});
 
 // app.js
 
@@ -185,6 +181,10 @@ window.addEventListener('load', function() {
       loginBtn.style.display = 'none';
       logoutBtn.style.display = 'inline-block';
       loginStatus.innerHTML = 'You are logged in!';
+      const arr = [ "Nov. 30", "Dec. 1st", "Dec. 2nd", "Dec. 3rd", "Dec. 4th", "Dec. 5th" ]
+      arr.forEach(x => {
+      		addHTML(x)
+      });
     } else {
       loginBtn.style.display = 'inline-block';
       logoutBtn.style.display = 'none';
