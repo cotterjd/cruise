@@ -40,12 +40,12 @@
 </head>
 
 <h2>Jordan & Casey's 10yr Wedding Anniversary Cruise Baby-sitting Signup</h2>
+<h3 class="count-down"></h3>
 <div id="login-view">
 	<button id="btn-login">Login</button>
 </div>
 <button id="btn-home-view">Home</button>
-<button id="btn-logout">Logout</button
-<h3 class="count-down"></h3>
+<button id="btn-logout">Logout</button>
 <div id="homeView" class="container">
 	<h4></h4>
 </div>
@@ -97,6 +97,10 @@ function addHTML(day) {
 	document.querySelector('.container').appendChild(div)
 }
 
+const arr = [ "Nov. 30", "Dec. 1st", "Dec. 2nd", "Dec. 3rd", "Dec. 4th", "Dec. 5th" ]
+arr.forEach(x => {
+		addHTML(x)
+});
 
 // app.js
 
@@ -181,10 +185,6 @@ window.addEventListener('load', function() {
       loginBtn.style.display = 'none';
       logoutBtn.style.display = 'inline-block';
       loginStatus.innerHTML = 'You are logged in!';
-      const arr = [ "Nov. 30", "Dec. 1st", "Dec. 2nd", "Dec. 3rd", "Dec. 4th", "Dec. 5th" ]
-      arr.forEach(x => {
-      		addHTML(x)
-      });
     } else {
       loginBtn.style.display = 'inline-block';
       logoutBtn.style.display = 'none';
