@@ -23,7 +23,15 @@
 	.count-down {
 		text-align: center;
 	}
-
+	.header {
+		color: blue;
+		position: fixed;
+		height: 50px;
+	  width: 100vw;
+	}
+	#login-view {
+		float: right;
+	}
 	@media all screen and (max-width: 500px) {
 		body {
 			background: yellow;
@@ -38,12 +46,13 @@
 <head>
 	<meta name="viewpoint" content="width=device-width, initial-scale=1">
 </head>
-
+<div class="header">
+  <div id="login-view">
+  	<button id="btn-login"></button>
+  </div>
+</div>
 <h2>Jordan & Casey's 10yr Wedding Anniversary Cruise Baby-sitting Signup</h2>
 <h3 class="count-down"></h3>
-<div id="login-view">
-	<button id="btn-login">Login</button>
-</div>
 <button id="btn-home-view">Home</button>
 <button id="btn-logout">Logout</button>
 <div id="home-view" class="container">
@@ -121,7 +130,8 @@ window.addEventListener('load', function() {
     e.preventDefault();
     webAuth.authorize();
   });
-  var loginStatus = document.querySelector('.container h4');
+  //var loginStatus = document.querySelector('.container h4');
+  var loginStatus = document.querySelector('#btn-login');
   var loginView = document.getElementById('login-view');
   var homeView = document.getElementById('home-view');
 
@@ -131,6 +141,7 @@ window.addEventListener('load', function() {
   var logoutBtn = document.getElementById('btn-logout');
 
   homeViewBtn.addEventListener('click', function() {
+			// show values
     homeView.style.display = 'inline-block';
     loginView.style.display = 'none';
   });
@@ -184,12 +195,12 @@ window.addEventListener('load', function() {
     if (isAuthenticated()) {
       loginBtn.style.display = 'none';
       logoutBtn.style.display = 'inline-block';
-      loginStatus.innerHTML = 'You are logged in!';
+      loginStatus.innerHTML = 'Logout';
     } else {
       loginBtn.style.display = 'inline-block';
       logoutBtn.style.display = 'none';
       loginStatus.innerHTML =
-        'You are not logged in! Please log in to continue.';
+        'Login';
     }
   }
 
