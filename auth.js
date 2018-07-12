@@ -84,10 +84,12 @@ window.addEventListener('load', function() {
       loginBtn.style.display = 'none';
       logoutBtn.style.display = 'inline-block';
  //     loginStatus.innerHTML = 'You are logged in!';
+      document.querySelector('body').addClass('logged-in-body')
     } else {
 			// hide values
       loginBtn.style.display = 'inline-block';
       logoutBtn.style.display = 'none';
+      document.querySelector('body').removeClass('logged-in-body')
  //     loginStatus.innerHTML =
  //       'You are not logged in! Please log in to continue.';
     }
