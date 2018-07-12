@@ -1,0 +1,42 @@
+body {
+  background-image: url('cruise.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+input {
+  font-size: 18px;
+  max-width: 180px;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 10px;
+}
+.day {
+  display: grid;
+  grid-gap: 10px;
+}
+.item {
+  display: grid;
+}
+.count-down {
+  text-align: center;
+}
+#btn-login, #btn-logout {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#heading {
+  padding-right: 20px;
+}
+@media all screen and (max-width: 500px) {
+  body {
+    background: yellow;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
