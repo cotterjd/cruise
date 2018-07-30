@@ -1,6 +1,5 @@
-
-// app.js
-
+import { foo } from './api.js'
+api.foo()
 window.addEventListener('load', function() {
 
   var webAuth = new auth0.WebAuth({
@@ -35,12 +34,31 @@ window.addEventListener('load', function() {
 
   logoutBtn.addEventListener('click', logout);
 
+//"query": "{ slots { name } }" 
+	function getSlots(data) {
+		return fetch('https://us1.prisma.sh/jordan-cotter-820a2c/cruise/dev', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => {
+			console.log(response.json());
+			return	response.json();
+		}) // parses response to JSON
+    .catch(error => console.error(`Fetch Error =\n`, error));
+	}
   function handleAuthentication() {
     webAuth.parseHash(function(err, authResult) {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         setSession(authResult);
-        loginBtn.style.display = 'none';
+				const slotsQuery = {
+					"query": "{ slots { name date number time } }"
+				}
+				getSlots(slotsQuery);
+        //loginBtn.style.display = 'none';
  //       homeView.style.display = 'inline-block';
       } else if (err) {
   //      homeView.style.display = 'inline-block';
