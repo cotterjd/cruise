@@ -42,8 +42,7 @@ window.addEventListener('load', function() {
         body: JSON.stringify(data),
     })
     .then(response => {
-			console.log(response.json());
-			return	response.json();
+			return response;
 		}) // parses response to JSON
     .catch(error => console.error(`Fetch Error =\n`, error));
 	}
@@ -100,7 +99,12 @@ window.addEventListener('load', function() {
 			const slotsQuery = {
 				"query": "{ slots { name date number time } }"
 			}
-			getSlots(slotsQuery);
+			const slots = getSlots(slotsQuery);
+			console.log('slots', slots);
+			console.log('json', slots.json);
+			console.log(slots.then(s => {
+						console.log('s', s);
+						});
     } else {
 			// hide values
       loginBtn.style.display = 'inline-block';
