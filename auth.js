@@ -1,5 +1,3 @@
-import { foo } from './api.js'
-api.foo()
 window.addEventListener('load', function() {
 
   var webAuth = new auth0.WebAuth({
