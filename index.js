@@ -1,5 +1,5 @@
 const data = {
-	query: "slots { name }" 
+	"query": "{ slots { name } }" 
 }
 fetch('https://us1.prisma.sh/jordan-cotter-820a2c/cruise/dev', {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
