@@ -52,10 +52,6 @@ window.addEventListener('load', function() {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         setSession(authResult);
-				const slotsQuery = {
-					"query": "{ slots { name date number time } }"
-				}
-				getSlots(slotsQuery);
         //loginBtn.style.display = 'none';
  //       homeView.style.display = 'inline-block';
       } else if (err) {
@@ -101,6 +97,10 @@ window.addEventListener('load', function() {
       logoutBtn.style.display = 'inline-block';
  //     loginStatus.innerHTML = 'You are logged in!';
       document.querySelector('body').setAttribute('class', 'logged-in-body')
+			const slotsQuery = {
+				"query": "{ slots { name date number time } }"
+			}
+			getSlots(slotsQuery);
     } else {
 			// hide values
       loginBtn.style.display = 'inline-block';
