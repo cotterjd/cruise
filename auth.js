@@ -31,7 +31,7 @@ window.addEventListener('load', function() {
 
   logoutBtn.addEventListener('click', logout);
 
-//"query": "{ slots { name } }" 
+//"query": "{ slots { name } }"
 	function getSlots(data) {
 		return fetch('https://us1.prisma.sh/jordan-cotter-820a2c/cruise/dev', {
         method: "POST",
@@ -53,7 +53,6 @@ window.addEventListener('load', function() {
         //loginBtn.style.display = 'none';
  //       homeView.style.display = 'inline-block';
       } else if (err) {
-        logoutBtn.style.display = 'none';
   //      homeView.style.display = 'inline-block';
         console.log(err);
         alert(
@@ -104,7 +103,7 @@ window.addEventListener('load', function() {
 			console.log('json', slots.json);
 			console.log(slots.then(s => {
 						console.log('s', s);
-						});
+          }));
     } else {
 			// hide values
       loginBtn.style.display = 'inline-block';
