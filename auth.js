@@ -99,7 +99,8 @@ window.addEventListener('load', function() {
 			const slotsQuery = {
 				"query": "{ slots { name date number time } }"
 			}
-			getSlots(slotsQuery);
+      // TODO: get eslint
+			getSlots(slotsQuery)
         .then(res => {
           const slots = res.data.slots
           console.log(slots)
