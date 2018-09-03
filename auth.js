@@ -12,7 +12,6 @@ window.addEventListener('load', function() {
     redirectUri: window.location.href
   });
 
-  var loginBtn = document.getElementById('btn-login');
 
   loginBtn.addEventListener('click', function(e) {
     e.preventDefault();
@@ -43,6 +42,7 @@ window.addEventListener('load', function() {
         loginBtn.style.display = 'none';
  //       homeView.style.display = 'inline-block';
       } else if (err) {
+        logoutBtn.style.display = 'none';
   //      homeView.style.display = 'inline-block';
         console.log(err);
         alert(
