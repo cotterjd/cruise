@@ -99,16 +99,11 @@ window.addEventListener('load', function() {
 			const slotsQuery = {
 				"query": "{ slots { name date number time } }"
 			}
-			const response = getSlots(slotsQuery);
-      console.log('res', response)
-      let slots;
-      response.then(x => {
-        slots = x.data.slots
-      })
-			slots.then(s => {
-				console.log('s', s);
-				console.log('d', s.data);
-      });
+			getSlots(slotsQuery);
+        .then(res => {
+          const slots = res.data.slots
+          console.log(slots)
+        })
     } else {
 			// hide values
       loginBtn.style.display = 'inline-block';
