@@ -1,6 +1,3 @@
-
-// app.js
-
 window.addEventListener('load', function() {
 
   var webAuth = new auth0.WebAuth({
@@ -34,12 +31,26 @@ window.addEventListener('load', function() {
 
   logoutBtn.addEventListener('click', logout);
 
+//"query": "{ slots { name } }" 
+	function getSlots(data) {
+		return fetch('https://us1.prisma.sh/jordan-cotter-820a2c/cruise/dev', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => {
+			return response;
+		}) // parses response to JSON
+    .catch(error => console.error(`Fetch Error =\n`, error));
+	}
   function handleAuthentication() {
     webAuth.parseHash(function(err, authResult) {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         setSession(authResult);
-        loginBtn.style.display = 'none';
+        //loginBtn.style.display = 'none';
  //       homeView.style.display = 'inline-block';
       } else if (err) {
         logoutBtn.style.display = 'none';
@@ -85,6 +96,15 @@ window.addEventListener('load', function() {
       logoutBtn.style.display = 'inline-block';
  //     loginStatus.innerHTML = 'You are logged in!';
       document.querySelector('body').setAttribute('class', 'logged-in-body')
+			const slotsQuery = {
+				"query": "{ slots { name date number time } }"
+			}
+			const slots = getSlots(slotsQuery);
+			console.log('slots', slots);
+			console.log('json', slots.json);
+			console.log(slots.then(s => {
+						console.log('s', s);
+						});
     } else {
 			// hide values
       loginBtn.style.display = 'inline-block';
