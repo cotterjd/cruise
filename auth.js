@@ -12,7 +12,7 @@ window.addEventListener('load', function() {
 
   var loginBtn = document.getElementById('btn-login');
   var logoutBtn = document.getElementById('btn-logout');
-  
+
   loginBtn.addEventListener('click', function(e) {
     e.preventDefault();
     webAuth.authorize();
@@ -42,7 +42,7 @@ window.addEventListener('load', function() {
         body: JSON.stringify(data),
     })
     .then(response => {
-			return response;
+			return response.json();
 		}) // parses response to JSON
     .catch(error => console.error(`Fetch Error =\n`, error));
 	}
