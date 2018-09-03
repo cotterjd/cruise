@@ -10,6 +10,9 @@ window.addEventListener('load', function() {
   });
 
 
+  var loginBtn = document.getElementById('btn-login');
+  var logoutBtn = document.getElementById('btn-logout');
+  
   loginBtn.addEventListener('click', function(e) {
     e.preventDefault();
     webAuth.authorize();
@@ -20,8 +23,6 @@ window.addEventListener('load', function() {
 
   // buttons and event listeners
   //var homeViewBtn = document.getElementById('btn-home-view');
-  var loginBtn = document.getElementById('btn-login');
-  var logoutBtn = document.getElementById('btn-logout');
 
  // homeViewBtn.addEventListener('click', function() {
  // 		// show values
