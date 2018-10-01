@@ -43,7 +43,7 @@ function addHTML(day) {
 	document.querySelector('.container').appendChild(div)
 }
 
-const arr = [ "Nov. 30", "Dec. 1st", "Dec. 2nd", "Dec. 3rd", "Dec. 4th", "Dec. 5th" ]
+const arr = [ "Nov. 30th", "Dec. 1st", "Dec. 2nd", "Dec. 3rd", "Dec. 4th", "Dec. 5th" ]
 arr.forEach(x => {
 		addHTML(x)
 });
