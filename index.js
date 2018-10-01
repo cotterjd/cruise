@@ -15,29 +15,31 @@ daysTilCruiseElement.outerHTML=`${daysTillCruise} days until cruise!`
 function addHTML(day) {
 	const
 		div = document.createElement('div')
+	, id = day.split('. ').join('')
 	;
 	div.className="day"
+	div.setAttribute('id', id)
 	div.innerHTML = `
 		<p><strong>${day}</strong></p>
-		<div class="item">
+		<div class="item morning">
 			<span>Morning</span>
-			<input placeholder="name" />
-			<input placeholder="number" />
+			<input class="name" placeholder="name" />
+			<input class="number" placeholder="number" />
 		</div>
-		<div class="item">
+		<div class="item afternoon">
 			<span>Afternoon</span>
-			<input placeholder="name" />
-			<input placeholder="number" />
+			<input class="name" placeholder="name" />
+			<input class="number" placeholder="number" />
 		</div>
-		<div class="item">
+		<div class="item evening">
 			<span>Evening</span>
-			<input placeholder="name" />
-			<input placeholder="number" />
+			<input class="name" placeholder="name" />
+			<input class="number" placeholder="number" />
 		</div>
-		<div class="item">
+		<div class="item night">
 			<span>Night</span>
-			<input placeholder="name" />
-			<input placeholder="number" />
+			<input class="name" placeholder="name" />
+			<input class="number" placeholder="number" />
 		</div>
 	`
 	document.querySelector('.container').appendChild(div)
