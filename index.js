@@ -16,6 +16,14 @@ function addHTML(day) {
 	const
 		div = document.createElement('div')
 	, id = day.split('. ').join('')
+	, morningNameId = id+'-moring-name'
+	, morningNumberId = id+'-morning-number'
+	, afternoonNameId = id+'-afternoon-name'
+	, afternoonNumberId = id+'-afternoon-number'
+	, eveningNameId = id+'-evening-name'
+	, eveningNumberId = id+'-evening-number'
+	, nightNameId = id+'-night-name'
+	, nightNumberId = id+'-night-number'
 	;
 	div.className="day"
 	div.setAttribute('id', id)
@@ -23,25 +31,26 @@ function addHTML(day) {
 		<p><strong>${day}</strong></p>
 		<div class="item morning">
 			<span>Morning</span>
-			<input class="name" placeholder="name" />
-			<input class="number" placeholder="number" />
+			<input id=${morningNameId} placeholder="name" />
+			<input id=${morningNumberId} placeholder="number" />
 		</div>
 		<div class="item afternoon">
 			<span>Afternoon</span>
-			<input class="name" placeholder="name" />
-			<input class="number" placeholder="number" />
+			<input id=${afternoonNameId} placeholder="name" />
+			<input id=${afternoonNumberId} placeholder="number" />
 		</div>
 		<div class="item evening">
 			<span>Evening</span>
-			<input class="name" placeholder="name" />
-			<input class="number" placeholder="number" />
+			<input id=${eveningNameId} placeholder="name" />
+			<input id=${eveningNumberId} placeholder="number" />
 		</div>
 		<div class="item night">
 			<span>Night</span>
-			<input class="name" placeholder="name" />
-			<input class="number" placeholder="number" />
+			<input id=${nightNameId} placeholder="name" />
+			<input id=${nightNumberId} placeholder="number" />
 		</div>
 	`
+	//document.querySelector('#'+id+'-name').addEventListener("onkeyup", (evt) => console.log(evt.target.value))
 	document.querySelector('.container').appendChild(div)
 }
 
