@@ -16,6 +16,7 @@ function addHTML(day) {
 	const
 		div = document.createElement('div')
 	, id = day.split('. ').join('')
+	// TODO: grab ids from database
 	, morningNameId = id+'-morning-name'
 	, morningNumberId = id+'-morning-number'
 	, afternoonNameId = id+'-afternoon-name'
@@ -54,7 +55,26 @@ function addHTML(day) {
 	document.querySelector('.container').appendChild(div)
 	const createListener = (inputId) => {
 		const selector = `#${inputId}`
-		document.querySelector(selector).addEventListener("change", (evt) => console.log(evt.target.value))
+		document.querySelector(selector).addEventListener("change", (evt) => {
+			//if (inputId.includes('name')) {
+//
+			//}
+	  	//return fetch('https://us1.prisma.sh/jordan-cotter-820a2c/cruise/dev', {
+      //    method: "POST",
+      //    headers: {
+      //        "Content-Type": "application/json",
+      //    },
+      //    body: JSON.stringify(`
+			//			mutation {
+			//				createSlot(data: ${data} )
+			//			}
+			//		`),
+      //})
+      //.then(response => {
+	  	//	return response.json();
+	  	//}) // parses response to JSON
+      //.catch(error => console.error(`Fetch Error =\n`, error));
+		})
 	}
 	createListener(morningNameId)
 	createListener(morningNumberId)

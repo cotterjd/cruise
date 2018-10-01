@@ -54,6 +54,7 @@ window.addEventListener('load', function() {
           .then(res => {
             const slots = res.data.slots
             console.log(slots)
+            document.querySelector('#Dec5th-morning-name').value = slots.find(x => !!x.name).name
           })
       } else {
 		  	// TODO: hide values
