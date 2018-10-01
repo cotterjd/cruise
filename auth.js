@@ -53,7 +53,6 @@ window.addEventListener('load', function() {
 		  	getSlots(slotsQuery)
           .then(res => {
             const slots = res.data.slots
-            document.querySelector('#Nov30th').value = 'jordan cotter' 
             console.log(slots)
           })
       } else {
