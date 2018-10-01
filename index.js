@@ -16,7 +16,7 @@ function addHTML(day) {
 	const
 		div = document.createElement('div')
 	, id = day.split('. ').join('')
-	, morningNameId = id+'-moring-name'
+	, morningNameId = id+'-morning-name'
 	, morningNumberId = id+'-morning-number'
 	, afternoonNameId = id+'-afternoon-name'
 	, afternoonNumberId = id+'-afternoon-number'
@@ -50,8 +50,20 @@ function addHTML(day) {
 			<input id=${nightNumberId} placeholder="number" />
 		</div>
 	`
-	//document.querySelector('#'+id+'-name').addEventListener("onkeyup", (evt) => console.log(evt.target.value))
+
 	document.querySelector('.container').appendChild(div)
+	const createListener = (inputId) => {
+		const selector = `#${inputId}`
+		document.querySelector(selector).addEventListener("change", (evt) => console.log(evt.target.value))
+	}
+	createListener(morningNameId)
+	createListener(morningNumberId)
+	createListener(afternoonNameId)
+	createListener(afternoonNumberId)
+	createListener(eveningNameId)
+	createListener(eveningNumberId)
+	createListener(nightNameId)
+	createListener(nightNumberId)
 }
 
 const arr = [ "Nov. 30th", "Dec. 1st", "Dec. 2nd", "Dec. 3rd", "Dec. 4th", "Dec. 5th" ]
