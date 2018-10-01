@@ -10,13 +10,16 @@ window.addEventListener('load', function() {
     })
   , loginBtn = document.getElementById('btn-login')
   , logoutBtn = document.getElementById('btn-logout')
-
+  , clearFields = function clearFields() {
+      document.querySelectorAll('input').forEach(x => x.value = '');
+    }
 //"query": "{ slots { name } }"
   , logout = function logout() {
       // Remove tokens and expiry time from localStorage
       localStorage.removeItem('access_token');
       localStorage.removeItem('id_token');
       localStorage.removeItem('expires_at');
+      clearFields();
       displayButtons();
     }
 	, getSlots = function getSlots(data) {
