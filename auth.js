@@ -43,6 +43,17 @@ window.addEventListener('load', function() {
       return new Date().getTime() < expiresAt;
     }
 
+	, populateData = function (date) {
+       document.querySelector(`#${date}-morning-name`).value = slots.find(x => !!x.name).name
+       document.querySelector(`#${date}-afternoon-name`).value = slots.find(x => !!x.name).name
+       document.querySelector(`#${date}-evening-name`).value = slots.find(x => !!x.name).name
+       document.querySelector(`#${date}-night-name`).value = slots.find(x => !!x.name).name
+
+       document.querySelector(`#${date}-morning-number`).value = slots.find(x => !!x.name).name
+       document.querySelector(`#${date}-afternoon-number`).value = slots.find(x => !!x.name).name
+       document.querySelector(`#${date}-evening-number`).value = slots.find(x => !!x.name).name
+       document.querySelector(`#${date}-night-number`).value = slots.find(x => !!x.name).name
+		}
   , displayButtons = function displayButtons() {
       if (isAuthenticated()) {
 		  	// TODO: show values
@@ -57,7 +68,12 @@ window.addEventListener('load', function() {
           .then(res => {
             const slots = res.data.slots
             console.log(slots)
-            document.querySelector('#Dec5th-morning-name').value = slots.find(x => !!x.name).name
+						populateData('#Nov30th');
+						populateData('#Dec1st');
+						populateData('#Dec2nd');
+						populateData('#Dec3rd');
+						populateData('#Dec4th');
+						populateData('#Dec5th');
           })
       } else {
 		  	// TODO: hide values
