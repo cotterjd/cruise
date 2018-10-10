@@ -44,16 +44,27 @@ window.addEventListener('load', function() {
     }
 
 	, populateData = function (date, slots) {
-			 console.log('ID', `#${date}-morning-name`);
-       document.querySelector(`#${date}-morning-name`).value = slots.find(x => !!x.name).name
-       document.querySelector(`#${date}-afternoon-name`).value = slots.find(x => !!x.name).name
-       document.querySelector(`#${date}-evening-name`).value = slots.find(x => !!x.name).name
-       document.querySelector(`#${date}-night-name`).value = slots.find(x => !!x.name).name
+			const populate = (time, prop) => {
+				const slot = slots.find(x => { console.log(x.date, date, x.time, time); return (x.date === date && x.time === time)})
+				if (!slot) {
+					console.error(`no slot found for date ${date} and time ${time}`)
+				}
+				const value = slot[prop]
+				const selector = `#${date}-${time}-${prop}`
+      	document
+					.querySelector(selector)
+					.value = value
+			
+			}
+			populate('morning', 'name');
+			populate('afternoon', 'name');
+			populate('evening', 'name');
+			populate('night', 'name');
 
-       document.querySelector(`#${date}-morning-number`).value = slots.find(x => !!x.name).name
-       document.querySelector(`#${date}-afternoon-number`).value = slots.find(x => !!x.name).name
-       document.querySelector(`#${date}-evening-number`).value = slots.find(x => !!x.name).name
-       document.querySelector(`#${date}-night-number`).value = slots.find(x => !!x.name).name
+			populate('morning', 'number');
+			populate('afternoon', 'number');
+			populate('evening', 'number');
+			populate('night', 'number');
 		}
   , displayButtons = function displayButtons() {
       if (isAuthenticated()) {
@@ -68,7 +79,6 @@ window.addEventListener('load', function() {
 		  	getSlots(slotsQuery)
           .then(res => {
             const slots = res.data.slots
-            console.log(slots)
 						populateData('Nov30th', slots);
 						populateData('Dec1st', slots);
 						populateData('Dec2nd', slots);
