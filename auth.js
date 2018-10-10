@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
       return new Date().getTime() < expiresAt;
     }
 
-	, populateData = function (date) {
+	, populateData = function (date, slots) {
 			 console.log('ID', `#${date}-morning-name`);
        document.querySelector(`#${date}-morning-name`).value = slots.find(x => !!x.name).name
        document.querySelector(`#${date}-afternoon-name`).value = slots.find(x => !!x.name).name
@@ -69,12 +69,12 @@ window.addEventListener('load', function() {
           .then(res => {
             const slots = res.data.slots
             console.log(slots)
-						populateData('Nov30th');
-						populateData('Dec1st');
-						populateData('Dec2nd');
-						populateData('Dec3rd');
-						populateData('Dec4th');
-						populateData('Dec5th');
+						populateData('Nov30th', slots);
+						populateData('Dec1st', slots);
+						populateData('Dec2nd', slots);
+						populateData('Dec3rd', slots);
+						populateData('Dec4th', slots);
+						populateData('Dec5th', slots);
           })
       } else {
 		  	// TODO: hide values
