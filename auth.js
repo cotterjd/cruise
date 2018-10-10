@@ -44,6 +44,7 @@ window.addEventListener('load', function() {
     }
 
 	, populateData = function (date) {
+			 console.log('ID', `#${date}-morning-name`);
        document.querySelector(`#${date}-morning-name`).value = slots.find(x => !!x.name).name
        document.querySelector(`#${date}-afternoon-name`).value = slots.find(x => !!x.name).name
        document.querySelector(`#${date}-evening-name`).value = slots.find(x => !!x.name).name
