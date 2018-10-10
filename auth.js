@@ -69,12 +69,12 @@ window.addEventListener('load', function() {
           .then(res => {
             const slots = res.data.slots
             console.log(slots)
-						populateData('#Nov30th');
-						populateData('#Dec1st');
-						populateData('#Dec2nd');
-						populateData('#Dec3rd');
-						populateData('#Dec4th');
-						populateData('#Dec5th');
+						populateData('Nov30th');
+						populateData('Dec1st');
+						populateData('Dec2nd');
+						populateData('Dec3rd');
+						populateData('Dec4th');
+						populateData('Dec5th');
           })
       } else {
 		  	// TODO: hide values
