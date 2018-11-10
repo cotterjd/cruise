@@ -56,6 +56,7 @@ function addHTML(day) {
 	const createListener = (inputId) => {
 		const selector = `#${inputId}`
 		document.querySelector(selector).addEventListener("change", (evt) => {
+				console.log(evt)
 			//if (inputId.includes('name')) {
 //
 			//}
@@ -66,7 +67,7 @@ function addHTML(day) {
       //    },
       //    body: JSON.stringify(`
 			//			mutation {
-			//				createSlot(data: ${data} )
+			//				updateSlot(data: ${data} )
 			//			}
 			//		`),
       //})
