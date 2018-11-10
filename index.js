@@ -60,12 +60,12 @@ function addHTML(day) {
 			const [date, time, prop] = id.split('-')
 			const query = {
 				query: `mutation {
-				  updateManySlot(
+				  updateManySlots(
 						data: {
-						  ${prop}: ${evt.target.value}
+						  ${prop}: ${JSON.stringify(evt.target.value)}
 						}, 
 						where: { 
-							AND: [{ time: ${time} }, { date: ${date} }]
+							AND: [{ time: ${JSON.stringify(time)} }, { date: ${JSON.stringify(date)} }]
 						}
 					 ) {
 					   count
