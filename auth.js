@@ -45,7 +45,7 @@ window.addEventListener('load', function() {
 
 	, populateData = function (date, slots) {
 			const populate = (time, prop) => {
-				const slot = slots.find(x => { console.log(x.date, date, x.time, time); return (x.date === date && x.time === time)})
+				const slot = slots.find(x => x.date === date && x.time === time)
 				if (!slot) {
 					console.error(`no slot found for date ${date} and time ${time}`)
 				}
