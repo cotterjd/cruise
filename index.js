@@ -56,24 +56,33 @@ function addHTML(day) {
 	const createListener = (inputId) => {
 		const selector = `#${inputId}`
 		document.querySelector(selector).addEventListener("change", (evt) => {
-			//if (inputId.includes('name')) {
-//
-			//}
-	  	//return fetch('https://us1.prisma.sh/jordan-cotter-820a2c/cruise/dev', {
-      //    method: "POST",
-      //    headers: {
-      //        "Content-Type": "application/json",
-      //    },
-      //    body: JSON.stringify(`
-			//			mutation {
-			//				createSlot(data: ${data} )
-			//			}
-			//		`),
-      //})
-      //.then(response => {
-	  	//	return response.json();
-	  	//}) // parses response to JSON
-      //.catch(error => console.error(`Fetch Error =\n`, error));
+			const id = evt.target.id
+			const [date, time, prop] = id.split('-')
+			const query = {
+				query: `mutation {
+				  updateManySlots(
+						data: {
+						  ${prop}: ${JSON.stringify(evt.target.value)}
+						}, 
+						where: { 
+							AND: [{ time: ${JSON.stringify(time)} }, { date: ${JSON.stringify(date)} }]
+						}
+					 ) {
+					   count
+					 }
+				}`
+			}
+	  	return fetch('https://us1.prisma.sh/jordan-cotter-820a2c/cruise/dev', {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify(query),
+      })
+      .then(response => {
+	  		return response.json();
+	  	}) // parses response to JSON
+      .catch(error => console.error(`Fetch Error =\n`, error));
 		})
 	}
 	createListener(morningNameId)
