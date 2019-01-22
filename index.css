@@ -7,7 +7,7 @@ body {
 .logged-in-body {
   background-image: url('monkeys.png');
   background-repeat: repeat;
-  background-size: 100%;
+  background-size: 300px;
 }
 p, h2, h3, span {
   color: white;
@@ -41,6 +41,9 @@ input {
 }
 #heading {
   padding-right: 20px;
+}
+.logged-in-heading {
+	font-color: teal;
 }
 @media (max-width: 992px) {
   .container {
