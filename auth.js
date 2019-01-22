@@ -72,7 +72,6 @@ window.addEventListener('load', function() {
         loginBtn.style.display = 'none';
         logoutBtn.style.display = 'inline-block';
         document.querySelector('body').setAttribute('class', 'logged-in-body')
-        document.querySelector('#heading').setAttribute('class', 'logged-in-heading')
 		  	const slotsQuery = {
 		  		"query": "{ slots { name date number time } }"
 		  	}
