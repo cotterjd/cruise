@@ -95,7 +95,7 @@ function addHTML(day) {
 	createListener(nightNumberId)
 }
 
-const arr = [ "Nov. 30th", "Dec. 1st", "Dec. 2nd", "Dec. 3rd", "Dec. 4th", "Dec. 5th" ]
+const arr = [ "Sat Nov. 30th", "Sun Dec. 1st", " Mon Dec. 2nd", "Tue Dec. 3rd", "Wed Dec. 4th", "Thur Dec. 5th" ]
 arr.forEach(x => {
 		addHTML(x)
 });
