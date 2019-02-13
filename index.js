@@ -15,7 +15,7 @@ daysTilCruiseElement.outerHTML=`${daysTillCruise} days until cruise!`
 function addHTML(day) {
 	const
 		div = document.createElement('div')
-	, id = day.split('. ').join('')
+	, id = day.split('. ').join('').split(' ').join('')
 	// TODO: grab ids from database
 	, morningNameId = id+'-morning-name'
 	, morningNumberId = id+'-morning-number'
