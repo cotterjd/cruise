@@ -55,6 +55,10 @@ input {
 	color: teal;
 }
 @media (max-width: 992px) {
+  body {
+    background-color: #2162c8;
+    background-image: url();
+  }
   .container {
     display: grid;
     grid-template-columns: 1fr;
