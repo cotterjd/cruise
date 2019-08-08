@@ -10,6 +10,7 @@ window.addEventListener('load', function() {
     })
   , loginBtn = document.getElementById('btn-login')
   , logoutBtn = document.getElementById('btn-logout')
+  , mainDiv = document.getElementById('protected-values')
   , clearFields = function clearFields() {
       document.querySelectorAll('input').forEach(x => x.value = '');
     }
@@ -54,7 +55,7 @@ window.addEventListener('load', function() {
       	document
 					.querySelector(selector)
 					.value = value
-			
+
 			}
 			populate('morning', 'name');
 			populate('afternoon', 'name');
@@ -71,6 +72,7 @@ window.addEventListener('load', function() {
 		  	// TODO: show values
         loginBtn.style.display = 'none';
         logoutBtn.style.display = 'inline-block';
+        mainDiv.style.display = 'block'
         document.querySelector('body').setAttribute('class', 'logged-in-body')
 		  	const slotsQuery = {
 		  		"query": "{ slots { name date number time } }"
@@ -90,6 +92,7 @@ window.addEventListener('load', function() {
 		  	// TODO: hide values
         loginBtn.style.display = 'inline-block';
         logoutBtn.style.display = 'none';
+        mainDiv.style.display = 'none'
         document.querySelector('body').setAttribute('class', '')
       }
     }
@@ -123,7 +126,7 @@ window.addEventListener('load', function() {
     e.preventDefault();
     webAuth.authorize();
   });
-  logoutBtn.addEventListener('click', logout);
 
+  logoutBtn.addEventListener('click', logout);
 	handleAuthentication();
 });
