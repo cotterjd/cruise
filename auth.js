@@ -72,7 +72,7 @@ window.addEventListener('load', function() {
 		  	// TODO: show values
         loginBtn.style.display = 'none';
         logoutBtn.style.display = 'inline-block';
-        mainDiv.style.display = 'block'
+        mainDiv.style.display = 'grid'
         document.querySelector('body').setAttribute('class', 'logged-in-body')
 		  	const slotsQuery = {
 		  		"query": "{ slots { name date number time } }"
