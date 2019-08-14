@@ -1,9 +1,9 @@
 type Slot {
   id: ID! @unique
   name: String!
-	number: String!
-	time: String!
-	date: String!
+  number: String!
+  time: String!
+  date: String!
 }
 
 type UnitCode {

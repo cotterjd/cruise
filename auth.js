@@ -23,8 +23,8 @@ window.addEventListener('load', function() {
       clearFields();
       displayButtons();
     }
-	, getSlots = function getSlots(data) {
-	  	return fetch('https://us1.prisma.sh/jordan-cotter-820a2c/cruise/dev', {
+  , getSlots = function getSlots(data) {
+      return fetch('https://us1.prisma.sh/jordan-cotter-820a2c/cruise/dev', {
           method: "POST",
           headers: {
               "Content-Type": "application/json",
@@ -32,10 +32,10 @@ window.addEventListener('load', function() {
           body: JSON.stringify(data),
       })
       .then(response => {
-	  		return response.json();
-	  	}) // parses response to JSON
+        return response.json();
+      }) // parses response to JSON
       .catch(error => console.error(`Fetch Error =\n`, error));
-	  }
+    }
 
   , isAuthenticated = function isAuthenticated() {
       // Check whether the current time is past the
@@ -44,52 +44,52 @@ window.addEventListener('load', function() {
       return new Date().getTime() < expiresAt;
     }
 
-	, populateData = function (date, slots) {
-			const populate = (time, prop) => {
-				const slot = slots.find(x => x.date === date && x.time === time)
-				if (!slot) {
-					console.error(`no slot found for date ${date} and time ${time}`)
-				}
-				const value = slot[prop]
-				const selector = `#${date}-${time}-${prop}`
-      	document
-					.querySelector(selector)
-					.value = value
+  , populateData = function (date, slots) {
+      const populate = (time, prop) => {
+        const slot = slots.find(x => x.date === date && x.time === time)
+        if (!slot) {
+          console.error(`no slot found for date ${date} and time ${time}`)
+        }
+        const value = slot[prop]
+        const selector = `#${date}-${time}-${prop}`
+        document
+          .querySelector(selector)
+          .value = value
 
-			}
-			populate('morning', 'name');
-			populate('afternoon', 'name');
-			populate('evening', 'name');
-			populate('night', 'name');
+      }
+      populate('morning', 'name');
+      populate('afternoon', 'name');
+      populate('evening', 'name');
+      populate('night', 'name');
 
-			populate('morning', 'number');
-			populate('afternoon', 'number');
-			populate('evening', 'number');
-			populate('night', 'number');
-		}
+      populate('morning', 'number');
+      populate('afternoon', 'number');
+      populate('evening', 'number');
+      populate('night', 'number');
+    }
   , displayButtons = function displayButtons() {
       if (isAuthenticated()) {
-		  	// TODO: show values
+        // TODO: show values
         loginBtn.style.display = 'none';
         logoutBtn.style.display = 'inline-block';
         mainDiv.style.display = 'grid'
         document.querySelector('body').setAttribute('class', 'logged-in-body')
-		  	const slotsQuery = {
-		  		"query": "{ slots { name date number time } }"
-		  	}
+        const slotsQuery = {
+          "query": "{ slots { name date number time } }"
+        }
         // TODO: get eslint
-		  	getSlots(slotsQuery)
+        getSlots(slotsQuery)
           .then(res => {
             const slots = res.data.slots
-						populateData('Nov30th', slots);
-						populateData('Dec1st', slots);
-						populateData('Dec2nd', slots);
-						populateData('Dec3rd', slots);
-						populateData('Dec4th', slots);
-						populateData('Dec5th', slots);
+            populateData('Nov30th', slots);
+            populateData('Dec1st', slots);
+            populateData('Dec2nd', slots);
+            populateData('Dec3rd', slots);
+            populateData('Dec4th', slots);
+            populateData('Dec5th', slots);
           })
       } else {
-		  	// TODO: hide values
+        // TODO: hide values
         loginBtn.style.display = 'inline-block';
         logoutBtn.style.display = 'none';
         mainDiv.style.display = 'none'
@@ -128,5 +128,5 @@ window.addEventListener('load', function() {
   });
 
   logoutBtn.addEventListener('click', logout);
-	handleAuthentication();
+  handleAuthentication();
 });
