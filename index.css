@@ -20,11 +20,6 @@ header {
   justify-content: space-between;
   padding: 0 10px;
 }
-.logged-in-body {
-  background-image: url('monkeys.png');
-  background-repeat: repeat;
-  background-size: 300px;
-}
 p, h2, h3, span {
   color: white;
   font-family: sans;
@@ -57,19 +52,6 @@ input {
   padding: 8px 15px;
   border-radius: 10px;
   background-color: teal;
-}
-#btn-login {
-  background-color: #36b1d4;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 18px;
-}
-#btn-login:hover {
-  cursor: pointer;
-}
-#login-button-container {
-  display: flex;
-  justify-content: center;
 }
 #heading {
   /*padding-right: 20px;
