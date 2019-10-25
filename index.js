@@ -32,23 +32,23 @@ function addHTML(day) {
     <p><strong>${day}</strong></p>
     <div class="item morning">
       <span>Morning</span>
-      <input id=${morningNameId} placeholder="name" />
-      <input id=${morningNumberId} placeholder="number" />
+      <input disabled id=${morningNameId} placeholder="name" />
+      <input disabled id=${morningNumberId} placeholder="number" />
     </div>
     <div class="item afternoon">
       <span>Afternoon</span>
-      <input id=${afternoonNameId} placeholder="name" />
-      <input id=${afternoonNumberId} placeholder="number" />
+      <input disabled id=${afternoonNameId} placeholder="name" />
+      <input disabled id=${afternoonNumberId} placeholder="number" />
     </div>
     <div class="item evening">
       <span>Evening</span>
-      <input id=${eveningNameId} placeholder="name" />
-      <input id=${eveningNumberId} placeholder="number" />
+      <input disabled id=${eveningNameId} placeholder="name" />
+      <input disabled id=${eveningNumberId} placeholder="number" />
     </div>
     <div class="item night">
       <span>Night</span>
-      <input id=${nightNameId} placeholder="name" />
-      <input id=${nightNumberId} placeholder="number" />
+      <input disabled id=${nightNameId} placeholder="name" />
+      <input disabled id=${nightNumberId} placeholder="number" />
     </div>
   `
 
@@ -63,8 +63,8 @@ function addHTML(day) {
           updateManySlots(
             data: {
               ${prop}: ${JSON.stringify(evt.target.value)}
-            }, 
-            where: { 
+            },
+            where: {
               AND: [{ time: ${JSON.stringify(time)} }, { date: ${JSON.stringify(date)} }]
             }
            ) {
